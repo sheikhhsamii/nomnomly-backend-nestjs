@@ -1,7 +1,7 @@
 {
   "name": "nomnomly",
   "version": "0.0.1",
-  "description": "",
+  "description": "Restuarant based ordering system",
   "author": "Sheikh Sami",
   "private": true,
   "license": "UNLICENSED",
@@ -24,6 +24,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/jwt": "^11.0.1",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.17.1",
     "bcrypt": "^6.0.0",

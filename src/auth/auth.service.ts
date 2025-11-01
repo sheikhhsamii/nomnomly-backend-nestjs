@@ -24,7 +24,7 @@ export class AuthService {
       password: hashedPassword,
     });
     this.logger.log('Registered user:', registerUser);
-    const payload = { sub: registerUser.id, email: registerUser.email };
+    const payload = { id: registerUser.id, email: registerUser.email };
     return {
       access_token: await this.jwtService.signAsync(payload),
     };
@@ -41,7 +41,7 @@ export class AuthService {
     if (!isPasswordValid) {
       throw new UnauthorizedException('Email or password is incorrect');
     }
-    const payload = { sub: user.id, email: user.email };
+    const payload = { id: user.id, email: user.email };
     return {
       access_token: await this.jwtService.signAsync(payload),
     };

@@ -15,11 +15,21 @@ datasource db {
 }
 
 model User {
-  id    Int     @default(autoincrement()) @id
-  name  String
-  email String  @unique
-  password String
-  updated_at DateTime @updatedAt
-  created_at DateTime @default(now())
+  id         Int          @id @default(autoincrement())
+  name       String
+  email      String       @unique
+  password   String
+  updated_at DateTime     @updatedAt
+  created_at DateTime     @default(now())
+  Categories Categories[]
 }
 
+model Categories {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      Int
+  updated_at  DateTime @updatedAt
+  created_at  DateTime @default(now())
+}
